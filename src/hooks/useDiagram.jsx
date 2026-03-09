@@ -1,17 +1,30 @@
-import { useState, createContext, useContext, useCallback, useRef } from "react";
+import { useState, createContext, useContext, useCallback, useRef, useEffect } from "react";
 import { initialData } from "../constants/initialData";
 
 export const DiagramContext = createContext();
 
+const usePersistentState = (key, initialValue) => {
+    const [state, setState] = useState(() => {
+        const stored = localStorage.getItem(key);
+        return stored ? JSON.parse(stored) : initialValue;
+    });
+
+    useEffect(() => {
+        localStorage.setItem(key, JSON.stringify(state));
+    }, [key, state]);
+
+    return [state, setState];
+};
+
 export const DiagramProvider = ({ children }) => {
-    const [mapTitle, setMapTitle] = useState(initialData.mapTitle);
-    const [isLibraryOpen, setIsLibraryOpen] = useState(true);
-    const [nodes, setNodes] = useState(initialData.nodes);
-    const [edges, setEdges] = useState(initialData.edges);
+    const [mapTitle, setMapTitle] = usePersistentState("infra-mapper-title", initialData.mapTitle);
+    const [isLibraryOpen, setIsLibraryOpen] = usePersistentState("infra-mapper-library-open", true);
+    const [nodes, setNodes] = usePersistentState("infra-mapper-nodes", initialData.nodes);
+    const [edges, setEdges] = usePersistentState("infra-mapper-edges", initialData.edges);
     const [nodeDimensions, setNodeDimensions] = useState({});
 
-    const [pan, setPan] = useState({ x: 0, y: 0 });
-    const [zoom, setZoom] = useState(1);
+    const [pan, setPan] = usePersistentState("infra-mapper-pan", { x: 0, y: 0 });
+    const [zoom, setZoom] = usePersistentState("infra-mapper-zoom", 1);
     const canvasRef = useRef(null);
 
     const [draggedNode, setDraggedNode] = useState(null);
