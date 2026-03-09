@@ -4,7 +4,13 @@ import { useDiagram } from "../hooks/useDiagram";
 import { ICONS, NODE_COLORS, ICON_COLORS } from "../constants/config";
 
 const SUPPORTED_TYPES_FOR_SPECS = ["server", "pc", "mini_pc", "sbc", "nas"];
-const SUPPORTED_TYPES_FOR_CONTAINERS = ["server", "pc", "mini_pc", "nas", "sbc"];
+const SUPPORTED_TYPES_FOR_CONTAINERS = [
+    "server",
+    "pc",
+    "mini_pc",
+    "nas",
+    "sbc",
+];
 
 export const Node = ({ node }) => {
     const {
@@ -346,12 +352,13 @@ export const Node = ({ node }) => {
                                         />
                                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 ml-2 shrink-0" />
                                         <button
+                                            className="ml-1 hover:bg-slate-600 p-0.5 rounded"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 deleteSubItem(node.id, item.id);
                                             }}
                                         >
-                                            <Trash2 size={12} />
+                                            <Trash2 size={10} />
                                         </button>
                                     </div>
                                 ))}
