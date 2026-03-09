@@ -1,10 +1,21 @@
 # InfraMapper
 
-<!-- Describe your package here -->
+An IT infrastructure mapping tool. Visualize your compute nodes, networking equipment, and infrastructure on an infinite canvas with support for IP addresses, hardware specs, and running services.
 
 ## Features
 
--   <!-- List Features -->
+-   **Infinite Canvas** - Pannable and zoomable workspace with a dot grid background
+-   **Drag & Drop** - Drag nodes from the component library directly onto the canvas
+-   **Node Types** - Support for routers, switches, servers, PCs, mini PCs, SBCs (Raspberry Pi), NAS, access points, GPUs, HBAs, UPS units, and disks
+-   **Editable Properties** - Name, subtitle, IP address, and hardware specs for each node
+-   **Internal Components** - Attach GPUs, HBAs, and disks to nodes
+-   **Container/VM Tracking** - Track running services with name and IP address per node
+-   **Visual Connections** - Connect nodes via input/output ports with animated curved lines
+-   **Map Title** - Rename your infrastructure map via the top navigation
+
+## Screenshot
+
+![InfraMapper Interface](screenshot.png)
 
 ## Tech Stack
 
