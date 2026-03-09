@@ -15,7 +15,7 @@ An IT infrastructure mapping tool. Visualize your compute nodes, networking equi
 
 ## Screenshot
 
-![InfraMapper Interface](screenshot.png)
+![InfraMapper Interface](./public/screenshot.png)
 
 ## Tech Stack
 
