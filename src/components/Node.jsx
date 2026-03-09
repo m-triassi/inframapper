@@ -352,7 +352,7 @@ export const Node = ({ node }) => {
                                         />
                                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 ml-2 shrink-0" />
                                         <button
-                                            className="ml-1 hover:bg-slate-600 p-0.5 rounded"
+                                            className="ml-1 p-0.5 rounded text-slate-500 hover:text-red-400 transition-colors"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 deleteSubItem(node.id, item.id);
