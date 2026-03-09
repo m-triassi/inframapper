@@ -102,7 +102,7 @@ const renderPath = (start, end, isTemporary = false) => {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeDasharray="6, 6"
-            className="animate-[dash_1s_linear_infinite] opacity-70 hover:opacity-100 hover:stroke-cyan-400 hover:stroke-[3.5px] transition-all cursor-pointer pointer-events-auto"
+            className="animate-[dash_1s_linear_infinite] opacity-70 hover:opacity-100 hover:stroke-cyan-400 hover:stroke-[3.5px] cursor-pointer pointer-events-auto"
         />
     );
 };
